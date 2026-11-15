@@ -13,8 +13,8 @@
     --paper: #faf5ec;
     --ink: #33241f;
     --ink-soft: #6b584e;
-    --accent: #a34e2e;
-    --accent-soft: #c37a58;
+    --rose: #b0435e;
+    --rose-soft: #c97a8e;
     --gold: #b98d3f;
     --rule: rgba(107, 88, 78, 0.28);
   }
@@ -36,16 +36,16 @@
   /* ---- hero ---- */
   .hero {
     position: relative;
-    height: min(64vh, 46rem);
-    min-height: 24rem;
+    height: min(62vh, 44rem);
+    min-height: 22rem;
     overflow: hidden;
   }
   .hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 40%;
-    filter: saturate(1.03) brightness(0.97);
+    object-position: center 45%;
+    filter: saturate(1.02) brightness(0.98);
     transform: scale(1.06);
     animation: hero-settle 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
@@ -54,13 +54,13 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(51,36,31,0.35), rgba(51,36,31,0.12) 45%, rgba(250,245,236,0) 72%, var(--paper) 100%);
+    background: linear-gradient(to bottom, rgba(51,36,31,0.22), rgba(51,36,31,0.05) 45%, rgba(250,245,236,0) 72%, var(--paper) 100%);
     pointer-events: none;
   }
   .hero-title {
     position: absolute;
     left: 50%;
-    bottom: clamp(1.5rem, 6vh, 4rem);
+    bottom: clamp(1.5rem, 5vh, 3.5rem);
     transform: translateX(-50%);
     z-index: 2;
     text-align: center;
@@ -73,20 +73,14 @@
   .hero-title h1 {
     color: #fff8ef;
     text-shadow: 0 2px 26px rgba(51,36,31,0.6);
-    margin-bottom: 0.4rem;
-  }
-  .hero-title .sub {
-    color: #f3e5d3;
-    font-style: italic;
-    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
-    text-shadow: 0 1px 12px rgba(51,36,31,0.55);
+    margin-bottom: 0.25rem;
   }
 
   /* ---- letter body ---- */
   main {
     max-width: 46rem;
     margin: 0 auto;
-    padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 6vw, 3.5rem) 3rem;
+    padding: clamp(3rem, 8vw, 5.5rem) clamp(1.5rem, 6vw, 3.5rem) 3rem;
     text-align: center;
   }
 
@@ -95,7 +89,7 @@
     font-size: 0.8rem;
     letter-spacing: 0.42em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--rose);
     margin-bottom: 2rem;
   }
 
@@ -103,16 +97,16 @@
     font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 500;
     font-size: clamp(2.5rem, 7vw, 4.2rem);
-    line-height: 1.12;
+    line-height: 1.1;
     letter-spacing: -0.01em;
-    margin-bottom: 2.2rem;
+    margin-bottom: 2.4rem;
   }
 
   h2 {
     font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 500;
     font-size: 1.9rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.75rem;
   }
 
   .ornament {
@@ -121,7 +115,7 @@
     gap: 1rem;
     justify-content: center;
     color: var(--gold);
-    margin: 0 auto 2.2rem;
+    margin: 0 auto 2.4rem;
     font-size: 1rem;
   }
   .ornament::before, .ornament::after {
@@ -131,82 +125,35 @@
     background: var(--rule);
   }
 
-  .letter {
+  .wish {
     font-size: clamp(1.18rem, 2.6vw, 1.4rem);
     color: var(--ink);
     margin-bottom: 3.25rem;
   }
-  .letter p { margin-bottom: 1.5rem; }
-  .letter strong { font-weight: 500; }
+  .wish p { margin-bottom: 1.5rem; }
+  .wish strong { font-weight: 500; }
 
-  .thanks-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    gap: 1.1rem;
+  /* ---- arch-framed portrait ---- */
+  .portrait {
+    width: min(19rem, 72vw);
     margin: 0 auto 3.25rem;
-    text-align: left;
-    list-style: none;
-  }
-  .thanks-list li {
-    background: rgba(255, 255, 255, 0.55);
-    border: 1px solid var(--rule);
-    border-radius: 0.6rem;
-    padding: 1.1rem 1.2rem;
-    font-size: 1.02rem;
-    color: var(--ink-soft);
-  }
-  .thanks-list li span {
-    display: block;
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 1.15rem;
-    color: var(--ink);
-    margin-bottom: 0.3rem;
-  }
-
-  /* ---- gallery ---- */
-  .gallery {
-    max-width: 60rem;
-    margin: 0 auto 3.25rem;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-  .gallery figure {
-    border-radius: 0.7rem;
+    border-radius: 50% 50% 0.5rem 0.5rem / 34% 34% 0.5rem 0.5rem;
     overflow: hidden;
-    aspect-ratio: 3 / 4;
-    position: relative;
-    box-shadow: 0 14px 38px -16px rgba(51,36,31,0.35);
-    border: 1px solid rgba(107,88,78,0.16);
+    box-shadow: 0 18px 45px -18px rgba(51,36,31,0.35);
+    border: 1px solid rgba(107,88,78,0.18);
+    aspect-ratio: 4 / 5;
   }
-  .gallery img {
+  .portrait img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-  .gallery figure:hover img { transform: scale(1.06); }
-  .gallery figcaption {
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    padding: 1.8rem 0.8rem 0.7rem;
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-style: italic;
-    font-size: 0.95rem;
-    color: #fff8ef;
-    text-shadow: 0 1px 10px rgba(51,36,31,0.65);
-    background: linear-gradient(to top, rgba(51,36,31,0.55), transparent);
-  }
-  @media (max-width: 40rem) {
-    .gallery { grid-template-columns: 1fr; max-width: 22rem; }
   }
 
   .verse {
     position: relative;
     padding: 2.75rem 2rem;
-    margin-bottom: 3.25rem;
+    margin-bottom: 3.5rem;
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
@@ -214,13 +161,13 @@
     font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 5rem;
     line-height: 0.6;
-    color: var(--accent-soft);
+    color: var(--rose-soft);
     display: block;
     margin-bottom: 0.75rem;
   }
   .verse blockquote {
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(1.5rem, 3.2vw, 1.9rem);
+    font-size: clamp(1.5rem, 3.2vw, 1.95rem);
     line-height: 1.45;
     font-weight: 500;
     font-style: italic;
@@ -236,23 +183,40 @@
     color: var(--gold);
   }
 
-  .step-up { text-align: left; margin-bottom: 3.25rem; }
-  .step-up li {
-    list-style: none;
-    margin-bottom: 1.1rem;
-    padding-left: 1.9rem;
+  /* ---- full-width image band ---- */
+  .band {
+    width: 100%;
+    height: clamp(14rem, 38vw, 26rem);
+    overflow: hidden;
     position: relative;
-    font-size: clamp(1.1rem, 2.3vw, 1.25rem);
   }
-  .step-up li::before {
-    content: "\2726";
+  .band img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 62%;
+  }
+  .band::after {
+    content: "";
     position: absolute;
-    left: 0;
-    top: 0.05rem;
-    color: var(--accent-soft);
-    font-size: 0.95rem;
+    inset: 0;
+    background: linear-gradient(to top, rgba(51,36,31,0.38), rgba(51,36,31,0.06) 42%, transparent 62%);
+    pointer-events: none;
   }
-  .step-up strong { font-weight: 500; }
+  .band-caption {
+    position: absolute;
+    left: 50%;
+    bottom: 1.4rem;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.4vw, 1.3rem);
+    color: #fff8ef;
+    text-shadow: 0 1px 16px rgba(51,36,31,0.6);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
 
   .prayer {
     font-size: clamp(1.12rem, 2.3vw, 1.28rem);
@@ -266,7 +230,7 @@
     font-style: italic;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--rose);
     margin-bottom: 3.25rem;
   }
 
@@ -304,7 +268,6 @@
   @media (prefers-reduced-motion: reduce) {
     .fade { opacity: 1; transform: none; animation: none; }
     .hero img { transform: none; animation: none; }
-    .gallery figure:hover img { transform: none; }
     html { scroll-behavior: auto; }
   }
 
@@ -320,14 +283,13 @@
     <div class="hero-title">
       <p class="eyebrow fade d1">With Grateful Hearts</p>
       <h1 class="fade d2">Thank You, Joy Center Youth Alive</h1>
-      <p class="sub fade d2">For a Youth Week we will never forget</p>
     </div>
   </section>
 
   <main>
     <div class="ornament fade d3" aria-hidden="true">&#10022;</div>
 
-    <div class="letter fade d3">
+    <div class="wish fade d3">
       <p>
         From the depths of our hearts, we say <strong>thank you</strong>.
         What happened this Youth Week was not the work of a few &mdash; it
@@ -338,31 +300,14 @@
         To everyone who participated with full hearts, prayed without
         ceasing, contributed generously, and supported behind the scenes
         &mdash; seen and unseen &mdash; heaven took note, and so did we.
-        You are the reason Youth Week was beautiful.
+        You are the reason Youth Week was beautiful, and we do not take a
+        single one of you for granted.
       </p>
     </div>
 
-    <ul class="thanks-list fade d4">
-      <li><span>Your Participation</span>You filled every session with energy, faith, and presence.</li>
-      <li><span>Your Prayers</span>You prayed like the week depended on it &mdash; and God answered.</li>
-      <li><span>Your Contributions</span>Your giving made every plan possible.</li>
-      <li><span>Your Support</span>Your serving hands kept everything moving.</li>
-    </ul>
-
-    <section class="gallery fade d4" aria-label="Youth Week moments">
-      <figure>
-        <img src="images/photo1.jpg" alt="Youth Week moment" loading="lazy">
-        <figcaption>Youth Week 2026</figcaption>
-      </figure>
-      <figure>
-        <img src="images/photo2.jpg" alt="Youth Week moment" loading="lazy">
-        <figcaption>Moments of Worship</figcaption>
-      </figure>
-      <figure>
-        <img src="images/photo3.jpg" alt="Youth Week moment" loading="lazy">
-        <figcaption>Together We Rise</figcaption>
-      </figure>
-    </section>
+    <figure class="portrait fade d4">
+      <img src="images/photo2.jpg" alt="A Youth Week moment" loading="lazy">
+    </figure>
 
     <section class="verse fade d4">
       <span class="quote-mark" aria-hidden="true">&ldquo;</span>
@@ -373,29 +318,42 @@
       </blockquote>
       <cite>1 Timothy 4:12 &middot; NIV</cite>
     </section>
+  </main>
 
-    <h2 class="fade d5">Now, Step Up Even More</h2>
+  <section class="band" aria-label="Joy Center Youth Alive during Youth Week">
+    <img src="images/photo3.jpg" alt="Youth Week together" loading="lazy">
+    <p class="band-caption">Together, we rise</p>
+  </section>
 
-    <ul class="step-up fade d5">
-      <li><strong>Serve more boldly</strong> &mdash; the work you did this week proved what you carry. Don&rsquo;t stop now.</li>
-      <li><strong>Pray more deeply</strong> &mdash; the altar you built in one week can become a lifetime of fire.</li>
-      <li><strong>Give more generously</strong> &mdash; your little became much because God multiplied it. Watch what your much will do.</li>
-      <li><strong>Lead more courageously</strong> &mdash; there are rooms, stages, and harvests waiting for you. Step into them.</li>
-      <li><strong>Bring others along</strong> &mdash; every life you invite is another flame on the altar of Joy Center.</li>
-    </ul>
+  <main>
+    <h2 class="fade d5">Step Up Even More</h2>
+
+    <div class="wish fade d5">
+      <p>
+        The work you did this week proved what you carry &mdash; and it
+        proved it beyond doubt. So do not stop now. Serve more boldly,
+        pray more deeply, give more generously, and lead more courageously.
+        There are rooms, stages, and harvests waiting for you; step into
+        them.
+      </p>
+      <p>
+        Bring others along &mdash; every life you invite is another flame
+        on the altar of Joy Center. The fire you carried this week must
+        not die down. Let it grow into a blaze that our community cannot
+        ignore.
+      </p>
+    </div>
 
     <h2 class="fade d6">A Prayer Over You</h2>
 
     <div class="prayer fade d6">
       <p>
         Father, bless every young person of Joy Center Youth Alive. Reward
-        their labour of love openly. Let the fire they carried this week
-        never die down &mdash; let it grow into a blaze that our community
-        cannot ignore.
+        their labour of love openly. Give them strength for the next
+        assignment, joy for the journey, and a future that outshines every
+        sacrifice they have made.
       </p>
       <p>
-        Give them strength for the next assignment, joy for the journey,
-        and a future that outshines every sacrifice they have made.
         May they look back on this week and say, <em>&ldquo;That was only
         the beginning.&rdquo;</em>
       </p>
